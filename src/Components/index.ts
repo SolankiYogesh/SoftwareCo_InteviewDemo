@@ -1,9 +1,4 @@
-import AppContainer from './AppContainer/AppContainer'
-import AppLoader from './AppLoader/AppLoader'
-// PLOP COMPONENT IMPORTS
+import AppContainer from "./AppContainer/AppContainer"
+import AppLoader from "./AppLoader/AppLoader"
 
-export {
-  AppContainer,
-  AppLoader
-  // PLOP COMPONENT EXPORTS
-}
+export {AppContainer, AppLoader}

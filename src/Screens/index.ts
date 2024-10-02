@@ -1,8 +1,5 @@
-import LoginScreen from './Auth/LoginScreen/LoginScreen'
-import DashBoardScreen from './Main/DashBoardScreen/DashBoardScreen'
+import LoginScreen from "./Auth/LoginScreen/LoginScreen"
+import UserDetailsScreen from "./Main/UserDetailsScreen/UserDetailsScreen"
+import UserListScreen from "./Main/UserListScreen/UserListScreen"
 
-
-export {
-  DashBoardScreen,
-  LoginScreen
-}
+export {LoginScreen, UserDetailsScreen, UserListScreen}

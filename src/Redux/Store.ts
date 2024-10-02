@@ -1,10 +1,10 @@
-import {combineReducers, configureStore, Tuple} from '@reduxjs/toolkit'
-import logger from 'redux-logger'
-import {persistReducer, persistStore} from 'redux-persist'
-import {thunk} from 'redux-thunk'
+import {combineReducers, configureStore, Tuple} from "@reduxjs/toolkit"
+import logger from "redux-logger"
+import {persistReducer, persistStore} from "redux-persist"
+import {thunk} from "redux-thunk"
 
-import UserSlice from './Reducers/UserSlice'
-import storage from './storage'
+import UserSlice from "./Reducers/UserSlice"
+import storage from "./storage"
 
 const tuple = new Tuple(thunk)
 
@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(
   {
-    key: 'root',
+    key: "root",
     storage
   },
   rootReducer

@@ -1,18 +1,16 @@
-import {StyleSheet} from 'react-native'
-
-import Colors from './Colors'
+import {StyleSheet} from "react-native"
 
 export default StyleSheet.create({
   centerFlex: {
+    alignItems: "center",
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center"
   },
   flex: {
     flex: 1
   },
   row: {
-    flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: "center",
+    flexDirection: "row"
   }
 })

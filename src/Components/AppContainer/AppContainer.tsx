@@ -1,15 +1,15 @@
-import React from 'react'
-import {SafeAreaView, StatusBar,  View} from 'react-native'
+import React from "react"
+import {SafeAreaView, StatusBar, View} from "react-native"
 
-import {Colors, CommonStyle} from '@/Theme'
+import {Colors, CommonStyle} from "@/Theme"
 
-interface AppContainerProps {
+type AppContainerProps = {
   isTopSafeArea?: boolean
   isBottomSafeArea?: boolean
   children: React.ReactNode
 }
 
-const AppContainer = (props: AppContainerProps) => {
+export default (props: AppContainerProps) => {
   const {isTopSafeArea, isBottomSafeArea, children} = props
   const TopComponent = isTopSafeArea ? SafeAreaView : View
   const BottomComponent = isBottomSafeArea ? SafeAreaView : View
@@ -17,11 +17,9 @@ const AppContainer = (props: AppContainerProps) => {
   return (
     <View style={CommonStyle.flex}>
       <TopComponent />
-      <StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
+      <StatusBar barStyle={"dark-content"} backgroundColor={Colors.white} />
       <View style={CommonStyle.flex}>{children}</View>
       <BottomComponent />
     </View>
   )
 }
-
-export default AppContainer

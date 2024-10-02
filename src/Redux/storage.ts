@@ -1,5 +1,5 @@
-import {MMKV} from 'react-native-mmkv'
-import {Storage} from 'redux-persist'
+import {MMKV} from "react-native-mmkv"
+import type {Storage} from "redux-persist"
 
 const s = new MMKV()
 

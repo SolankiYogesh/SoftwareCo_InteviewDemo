@@ -1,4 +1,4 @@
-import APICall from './APICall'
-import EndPoints from './EndPoints'
+import APICall from "./APICall"
+import EndPoints from "./EndPoints"
 
 export {APICall, EndPoints}

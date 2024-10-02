@@ -7,8 +7,8 @@ import {CommonStyle} from "@/Theme"
 export default () => {
   return (
     <AppContainer>
-      <View style={CommonStyle.centerFlex}>
-        <Text>{"LoginScreen"}</Text>
+      <View style={CommonStyle.flex}>
+        <Text>{"UserListScreen"}</Text>
       </View>
     </AppContainer>
   )

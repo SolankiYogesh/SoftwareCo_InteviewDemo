@@ -1,13 +1,13 @@
-import React from 'react'
-import {GestureHandlerRootView} from 'react-native-gesture-handler'
-import {Provider} from 'react-redux'
-import {NavigationContainer} from '@react-navigation/native'
-import {PersistGate} from 'redux-persist/integration/react'
+import {NavigationContainer} from "@react-navigation/native"
+import React from "react"
+import {GestureHandlerRootView} from "react-native-gesture-handler"
+import {Provider} from "react-redux"
+import {PersistGate} from "redux-persist/integration/react"
 
-import {AppLoader} from './Components'
-import {persistor, store} from './Redux/Store'
-import {AppNavigation} from './Router'
-import {CommonStyle} from './Theme'
+import {AppLoader} from "./Components"
+import {persistor, store} from "./Redux/Store"
+import {AppNavigation} from "./Router"
+import {CommonStyle} from "./Theme"
 
 export default () => {
   return (

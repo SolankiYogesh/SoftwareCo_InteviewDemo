@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createSlice} from "@reduxjs/toolkit"
 
 const initialState: {
   userData: any // as per requirement
@@ -6,7 +6,7 @@ const initialState: {
   userData: null
 }
 const UserSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     setUserData: (state, action) => {

@@ -1,13 +1,12 @@
 /* eslint-disable no-console */
 
-import axios, {AxiosRequestConfig, AxiosRequestHeaders} from 'axios'
+import type {AxiosRequestConfig, AxiosRequestHeaders} from "axios"
+import axios from "axios"
 
-import Config from '@/config/Config'
-import Constant from '@/Helpers/Constant'
+import Config from "@/config/Config"
+import Constant from "@/Helpers/Constant"
 
-type Methodtype = 'post' | 'get' | 'put' | 'delete'
-
-
+type Methodtype = "post" | "get" | "put" | "delete"
 
 const axiosInstance = axios.create({
   baseURL: Config.BASE_URL
@@ -16,8 +15,6 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.response.use(
   (res) => res,
   async (error) => {
-
-
     // Return a Promise rejection if the status code is not 401
     return Promise.reject(error)
   }
@@ -59,11 +56,11 @@ const APICall = async <T>(
   if (url) {
     config.url = url
   }
-  if (body && method === 'get') {
+  if (body && method === "get") {
     config.params = body
-  } else if (body && (method === 'post' || method === 'put') && formData) {
+  } else if (body && (method === "post" || method === "put") && formData) {
     config.data = getFormData(body)
-    config.headers = {'Content-Type': 'multipart/form-data'}
+    config.headers = {"Content-Type": "multipart/form-data"}
   } else {
     config.data = body
   }
@@ -72,10 +69,10 @@ const APICall = async <T>(
     config.headers = headers
   }
 
-  return new Promise<ResponseTypeAXIOS<T>>((resolve, reject) => {
+  return new Promise<ResponseTypeAXIOS<T>>((resolve) => {
     axiosInstance(config)
       .then((res) => {
-        console.log('success', '<=======API Response======>', {
+        console.log("success", "<=======API Response======>", {
           status: res.status,
           data: res.data
         })

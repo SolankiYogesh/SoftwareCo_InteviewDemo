@@ -1,12 +1,12 @@
-import {Dimensions, Platform, StatusBar} from 'react-native'
-import {isTablet} from 'react-native-device-info'
+import {Dimensions, Platform, StatusBar} from "react-native"
+import {isTablet} from "react-native-device-info"
 
-const {width: WINDOW_WIDTH, height: WINDOW_HEIGHT} = Dimensions.get('window')
-const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('screen')
+const {width: WINDOW_WIDTH, height: WINDOW_HEIGHT} = Dimensions.get("window")
+const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get("screen")
 
 let isIPhoneX = false
 
-if (Platform.OS === 'ios' && !Platform.isPad) {
+if (Platform.OS === "ios" && !Platform.isPad) {
   isIPhoneX =
     WINDOW_HEIGHT === 780 ||
     WINDOW_WIDTH === 780 ||
@@ -20,11 +20,20 @@ if (Platform.OS === 'ios' && !Platform.isPad) {
     WINDOW_WIDTH === 926
 }
 
-const screenWidth = Dimensions.get('window').width
-const screenHeight = Dimensions.get('window').height
+const screenWidth = Dimensions.get("window").width
+const screenHeight = Dimensions.get("window").height
 
 const widthPx = (widthPercent: number) => {
   return (screenWidth * widthPercent) / 100
+}
+
+const getStatusBarHeight = () => {
+  const statusBarHeight: number = Platform.select({
+    ios: isIPhoneX ? 78 : 20,
+    android: (StatusBar.currentHeight ?? 0) > 24 ? 0 : (StatusBar.currentHeight ?? 0),
+    default: 0
+  })
+  return statusBarHeight
 }
 
 const heightPx = (heightPercent: number) => {
@@ -35,23 +44,14 @@ const font = (size: number) => {
   return (screenWidth * size) / 100
 }
 
-const getStatusBarHeight = () => {
-  const statusBarHeight: number = Platform.select({
-    ios: isIPhoneX ? 78 : 20,
-    android: (StatusBar.currentHeight ?? 0) > 24 ? 0 : StatusBar.currentHeight ?? 0,
-    default: 0
-  })
-  return statusBarHeight
-}
-
 const isIPhoneXSeries = () => {
-  if (Platform.OS === 'android') {
+  if (Platform.OS === "android") {
     return 0
   }
   return isIPhoneX ? 34 : 0
 }
 
-const isAndroidNouch = Platform.OS === 'android' ? (StatusBar.currentHeight ?? 0) > 24 : false
+const isAndroidNouch = Platform.OS === "android" ? (StatusBar.currentHeight ?? 0) > 24 : false
 const [shortDimension, longDimension] =
   WINDOW_WIDTH < WINDOW_HEIGHT ? [WINDOW_WIDTH, WINDOW_HEIGHT] : [WINDOW_HEIGHT, WINDOW_WIDTH]
 
@@ -80,4 +80,5 @@ export {
   SCREEN_HEIGHT,
   SCREEN_WIDTH,
   verticalScale,
-  widthPx}
+  widthPx
+}

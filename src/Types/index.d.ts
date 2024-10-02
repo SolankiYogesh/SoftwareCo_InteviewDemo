@@ -1,8 +1,12 @@
-interface ResponseTypeAXIOS<T> {
+type ResponseTypeAXIOS<T> = {
   status: number
   data: T
 }
-interface RootStackParamList {}
-interface AppLoaderRefType {
+type RootStackParamList = {
+  LoginScreen: undefined
+  UserListScreen: undefined
+  UserDetailsScreen: undefined
+}
+type AppLoaderRefType = {
   showLoader: (state: boolean) => void
 }
