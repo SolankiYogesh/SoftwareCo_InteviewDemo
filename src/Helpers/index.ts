@@ -1,5 +1,6 @@
 export {default as Constant} from "./Constant"
 export {default as Images} from "./Images"
 export {default as Screens} from "./Screens"
+export {default as StorageMMKV} from "./Storage"
 export {default as SVGByteCode} from "./SVGByteCode"
 export {default as Utility} from "./Utility"

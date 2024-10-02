@@ -3,10 +3,9 @@ import {useCallback, useState} from "react"
 import {Alert, Keyboard} from "react-native"
 
 import Loader from "@/Components/AppLoader/Loader"
-import {Constant, Screens} from "@/Helpers"
+import {Constant, Screens, StorageMMKV} from "@/Helpers"
 import {useNavigation} from "@/Hooks"
 import {APICall, EndPoints} from "@/Network"
-import storage from "@/Redux/storage"
 
 export default () => {
   const [userName, setUsername] = useState(__DEV__ ? "user1" : "")
@@ -27,7 +26,7 @@ export default () => {
     APICall("post", {username: userName, password}, EndPoints.login)
       .then((resp: any) => {
         if (resp.status === 200 && resp.data?.token) {
-          storage.set(Constant.StorageKeys.token, resp.data.token)
+          StorageMMKV.set(Constant.StorageKeys.token, resp.data.token)
 
           navigation.dispatch(
             CommonActions.reset({

@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 
-import type {AxiosRequestConfig} from "axios"
+import type {AxiosRequestConfig, AxiosRequestHeaders} from "axios"
 import axios from "axios"
 
 import Config from "@/Config/Config"
+import {Constant, StorageMMKV} from "@/Helpers"
 
 type Methodtype = "post" | "get" | "put" | "delete"
 
@@ -20,7 +21,17 @@ axiosInstance.interceptors.response.use(
 )
 
 axiosInstance.interceptors.request.use(
-  (config) => config,
+  (config) => {
+    const token = StorageMMKV.getString(Constant.StorageKeys.token)
+    if (token) {
+      config.headers = {
+        ...config?.headers,
+        Authorization: `Bearer ${token}`
+      } as unknown as AxiosRequestHeaders
+    }
+
+    return config
+  },
   async (error) => Promise.reject(error)
 )
 
