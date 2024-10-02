@@ -1,5 +1,3 @@
-import Colors from "./Colors"
-import CommonStyle from "./CommonStyle"
-import Fonts from "./Fonts"
-
-export {Colors, CommonStyle, Fonts}
+export {default as Colors} from "./Colors"
+export {default as CommonStyle} from "./CommonStyle"
+export {default as Fonts} from "./Fonts"

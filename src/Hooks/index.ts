@@ -1,4 +1,2 @@
-import useNavigation from "./useNavigation"
-import useRoute from "./useRoute"
-
-export {useNavigation, useRoute}
+export {default as useNavigation} from "./useNavigation"
+export {default as useRoute} from "./useRoute"

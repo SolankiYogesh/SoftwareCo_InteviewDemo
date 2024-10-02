@@ -66,11 +66,12 @@ const verticalScale = (size: number) => (longDimension / guidelineBaseHeight) * 
 const moderateScale = (size: number, factor = 0.5) => size + (scale(size) - size) * factor
 
 const isTab = isTablet()
-
+const INPUT_HEIGHT = verticalScale(50)
 export {
   font,
   getStatusBarHeight,
   heightPx,
+  INPUT_HEIGHT,
   isAndroidNouch,
   isIPhoneX,
   isIPhoneXSeries,

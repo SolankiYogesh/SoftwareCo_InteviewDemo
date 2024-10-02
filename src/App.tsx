@@ -5,6 +5,7 @@ import {Provider} from "react-redux"
 import {PersistGate} from "redux-persist/integration/react"
 
 import {AppLoader} from "./Components"
+import Loader from "./Components/AppLoader/Loader"
 import {persistor, store} from "./Redux/Store"
 import {AppNavigation} from "./Router"
 import {CommonStyle} from "./Theme"
@@ -16,7 +17,7 @@ export default () => {
         <GestureHandlerRootView style={CommonStyle.flex}>
           <NavigationContainer>
             <AppNavigation />
-            <AppLoader />
+            <AppLoader ref={(ref) => Loader.setLoader(ref)} />
           </NavigationContainer>
         </GestureHandlerRootView>
       </PersistGate>

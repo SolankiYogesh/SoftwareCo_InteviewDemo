@@ -4,7 +4,7 @@ import {persistReducer, persistStore} from "redux-persist"
 import {thunk} from "redux-thunk"
 
 import UserSlice from "./Reducers/UserSlice"
-import storage from "./storage"
+import {reduxStorage} from "./storage"
 
 const tuple = new Tuple(thunk)
 
@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(
   {
     key: "root",
-    storage
+    storage: reduxStorage
   },
   rootReducer
 )
