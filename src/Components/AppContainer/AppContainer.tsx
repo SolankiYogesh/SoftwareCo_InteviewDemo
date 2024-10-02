@@ -29,7 +29,7 @@ export default (props: AppContainerProps) => {
           backgroundColor: topBackgroundColor
         }}
       />
-      <StatusBar barStyle={"dark-content"} backgroundColor={Colors.white} />
+      <StatusBar barStyle={"dark-content"} />
       <View style={styles.container}>{children}</View>
       <BottomComponent />
     </View>

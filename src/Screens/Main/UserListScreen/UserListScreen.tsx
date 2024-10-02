@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo} from "react"
-import {FlatList, View} from "react-native"
+import {FlatList, StatusBar, View} from "react-native"
 
 import {AppContainer, LoadingView, TitleTextView} from "@/Components"
 import {Colors, CommonStyle} from "@/Theme"
@@ -22,6 +22,7 @@ export default () => {
 
   return (
     <AppContainer topBackgroundColor={Colors.whiteShadeF5}>
+      <StatusBar backgroundColor={Colors.whiteShadeF5} animated />
       <View style={styles.headerViewStyle}>
         <TitleTextView>List</TitleTextView>
       </View>

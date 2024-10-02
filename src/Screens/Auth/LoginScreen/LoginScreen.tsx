@@ -1,9 +1,10 @@
 import React from "react"
-import {Image, Text, View} from "react-native"
+import {Image, StatusBar, Text, View} from "react-native"
 import {KeyboardAwareScrollView} from "react-native-keyboard-controller"
 
 import {AppButton, AppContainer, AppInput, TitleTextView} from "@/Components"
 import {Images} from "@/Helpers"
+import {Colors} from "@/Theme"
 
 import styles from "./styles"
 import useLogin from "./useLogin"
@@ -12,6 +13,7 @@ export default () => {
   const {userName, onPressLogin, password, setUsername, setPassword} = useLogin()
   return (
     <AppContainer>
+      <StatusBar backgroundColor={Colors.white} animated />
       <KeyboardAwareScrollView>
         <Image source={Images.authLog} />
         <View style={styles.containerStyle}>

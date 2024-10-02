@@ -1,4 +1,4 @@
-import {ScrollView, Text, View} from "react-native"
+import {ScrollView, StatusBar, Text, View} from "react-native"
 import WebView from "react-native-webview"
 
 import {AppContainer, LoadingView, TitleTextView} from "@/Components"
@@ -13,6 +13,7 @@ export default () => {
 
   return (
     <AppContainer topBackgroundColor={Colors.whiteShadeF5}>
+      <StatusBar backgroundColor={Colors.whiteShadeF5} animated />
       <View style={styles.headerViewStyle}>
         <TitleTextView>Details</TitleTextView>
       </View>
