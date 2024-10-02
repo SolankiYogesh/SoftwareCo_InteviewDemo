@@ -17,13 +17,17 @@ export default StyleSheet.create({
 
   innerStyle: {
     alignItems: "center",
+    backgroundColor: Colors.blue,
+    borderRadius: moderateScale(8),
     columnGap: scale(10),
     flexDirection: "row",
     flex: 1,
-    justifyContent: "center"
+    justifyContent: "center",
+    padding: scale(15)
   },
 
   titleTextStyle: {
+    color: Colors.white,
     fontFamily: Fonts.ThemeSemiBold,
     fontSize: moderateScale(15)
   }

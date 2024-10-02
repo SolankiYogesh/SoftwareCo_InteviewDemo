@@ -1,3 +1,5 @@
 export default {
-  token: ""
+  StorageKeys: {
+    token: "access_token"
+  }
 }

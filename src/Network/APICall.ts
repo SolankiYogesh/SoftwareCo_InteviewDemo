@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
 
-import type {AxiosRequestConfig, AxiosRequestHeaders} from "axios"
+import type {AxiosRequestConfig} from "axios"
 import axios from "axios"
 
-import Config from "@/config/Config"
-import Constant from "@/Helpers/Constant"
+import Config from "@/Config/Config"
 
 type Methodtype = "post" | "get" | "put" | "delete"
 
@@ -21,19 +20,7 @@ axiosInstance.interceptors.response.use(
 )
 
 axiosInstance.interceptors.request.use(
-  (config) => {
-    const tempConfig = config
-    const {token} = Constant
-
-    if (token) {
-      config.headers = {
-        ...config?.headers,
-        Authorization: `Bearer ${token}`
-      } as unknown as AxiosRequestHeaders
-    }
-
-    return tempConfig
-  },
+  (config) => config,
   async (error) => Promise.reject(error)
 )
 

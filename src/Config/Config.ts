@@ -1,7 +1,5 @@
 import {Config as AppConfig} from "react-native-config"
 
-const Config = {
+export default {
   BASE_URL: AppConfig.BASE_URL
 }
-
-export default Config

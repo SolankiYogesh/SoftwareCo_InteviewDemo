@@ -10,7 +10,7 @@ type AppContainerProps = {
 }
 
 export default (props: AppContainerProps) => {
-  const {isTopSafeArea, isBottomSafeArea, children} = props
+  const {isTopSafeArea = true, isBottomSafeArea, children} = props
   const TopComponent = isTopSafeArea ? SafeAreaView : View
   const BottomComponent = isBottomSafeArea ? SafeAreaView : View
 
